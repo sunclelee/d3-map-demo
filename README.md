@@ -11,4 +11,4 @@ npm start
 
 # actual effect
 
-![图片的URL](https://github.com/sunclelee/d3-map-demo/blob/master/d3-map.gif?raw=true)https://github.com/sunclelee/d3-map-demo/blob/master/d3-map.gif?raw=true)
+![图片的URL](https://github.com/sunclelee/d3-map-demo/blob/master/d3-map.gif?raw=true)
