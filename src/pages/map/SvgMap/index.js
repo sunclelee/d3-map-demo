@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import _get from 'lodash/get';
 import PopTooltip from './PopTooltip';
 import { FlyLine, gradientColors } from './func';
-import { SVG_RATIO, PROVINCE_NUM } from '../../config';
+import { SVG_RATIO, PROVINCE_NUM } from '../config';
 
 const colors = gradientColors('#7098cd', '#09286C', 5);
 
@@ -34,6 +34,12 @@ class SvgMap extends PureComponent {
     this.drawMap();
   }
 
+  componentDidUpdate(preProps) {
+    if (preProps.height !== this.props.height || preProps.width !== this.props.width) {
+      this.drawMap();
+    }
+  }
+
   getMapColor = num => colorSplit.find(c => c.min <= num && num <= c.max)?.color || '#fff';
 
   // 生成路径生成器
@@ -44,11 +50,13 @@ class SvgMap extends PureComponent {
 
   // 生成投影
   generateProjection = scale => {
+    const { width, height } = this.props;
     return d3
       .geoMercator()
       // 这个中心是试出来的，要和底图吻合
-      .center([107.1, 42.3])
+      .center([108.8, 31.8])
       .scale(scale)
+      .translate([width / 2, height / 2]);
   };
 
   drawMap = () => {
@@ -156,6 +164,7 @@ class SvgMap extends PureComponent {
 
 SvgMap.propTypes = {
   width: PropTypes.number,
+  height: PropTypes.number,
 };
 
 export default SvgMap;

@@ -14,6 +14,7 @@ function PopTooltip(props) {
         left: x,
         top: y,
         pointerEvents: 'none',
+        fontSize: 14
       }}
     >
       {record?.name}

@@ -1,5 +1,9 @@
-// 地图宽度像素
-export const MAP_WIDTH = 1000;
+
+// 地图宽度像素，和高度像素一起保持底图的宽高比
+export const MAP_WIDTH = 800;
+
+// 地图高度像素，和宽度像素一起保持底图的宽高比
+export const MAP_HEIGHT = 646;
 
 // svg原始大小和地图底图大小的比例
 export const SVG_RATIO = 0.6702;
